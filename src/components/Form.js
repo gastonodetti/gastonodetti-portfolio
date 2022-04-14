@@ -1,30 +1,39 @@
-import React from "react"
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import "../css/Form.css"
 
 export default function Form(props) {
+  const form = useRef();
 
-    return (
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-        <div className="popup-box">
-        
-      <div className="box">
-      <div className="work--in--progress">Este sector está momentaneamente clausurado, ¡vuelva pronto!</div>
-        <span className="close-icon" onClick={props.handleClose}>x</span>
-        
-        <h4>Por favor, completa el formulario y me pondré en contacto lo antes posible</h4>
-        <form>
-          <input type="text" id="name" placeholder="Tu nombre"></input>
-          <input type="email" id="email" placeholder="Tu email"></input>
-          <input type="text" id="telephone" placeholder="Tu teléfono"></input>
-          <textarea type="text" id="description" placeholder="Tu consulta..."></textarea>
-          <input type="submit" id="submit"></input>
-        </form>
+    emailjs.sendForm('gastonodetti', 'template_mn9jeap', form.current, '08FvlSelA1uwFoZD4')
+      .then((result) => {
+          console.log(result.text);
+          alert("Email enviado con éxito!")
+      }, (error) => {
+          console.log(error.text);
+          alert("Algo salió mal, por favor contáctame al email gastonodetti@gmail.com")
+      });
 
-        <p className="label--contact">Si prefieres, contáctame en: </p>
-        
-        <p className="form--contact">gastonodetti@gmail.com |  + 54 9 351 7738898</p>
-      </div>
+    
+  };
+
+  return (
+    <div className="popup-box">
+    <span className="close-icon" onClick={props.handleClose}>x</span>
       
+    <form ref={form} onSubmit={sendEmail} className="box">
+      <h4>Por favor, completa el formulario y me pondré en contacto lo antes posible</h4>
+      <input type="text" name="name" placeholder='Tu nombre'/>
+      <input type="text" name="phone" placeholder='Tu teléfono'/>
+      <input type="email" name="email" placeholder='Tu email'/>
+      <textarea id="description" name="message" placeholder='Déjame aquí tu mensaje'/>
+      <input id="submit" type="submit" value="Send" />
+      <p className="label--contact">Si prefieres, contáctame en: </p>
+      <p className="form--contact">gastonodetti@gmail.com |  + 54 9 351 7738898</p>
+    </form>
     </div>
-  )
-}
+  );
+};
