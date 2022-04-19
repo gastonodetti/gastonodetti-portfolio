@@ -12,11 +12,17 @@ export default[
             link: "https://gastonodetti.github.io/Javascript/JS%20projects/Calculator/index.html"
         },
         {
+            name: "To Do - Javascript",
+            tools: "Javascript, Html y Css",
+            iconUrl: "#",
+            link: "https://todo-murex-omega.vercel.app/"
+        },
+        /*{
             name: "Tenzies game - React",
             tools: "React Js",
             iconUrl: "#",
             link: "https://tenzies-8r31zrasy-gastonodetti.vercel.app/",
-        },
+        },*/
         {
             name: "Meme generator - React",
             tools: "React Js",
