@@ -7,11 +7,13 @@ export default function Form(props) {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    emailjs.sendForm('gastonodetti', 'template_mn9jeap', form.current, '08FvlSelA1uwFoZD4')
+    
+        emailjs.sendForm('gastonodetti', 'template_mn9jeap', form.current, '08FvlSelA1uwFoZD4')
       .then((result) => {
           console.log(result.text);
+          
           alert("Email enviado con éxito!")
+          let loadingScreen = document.getElementById
       }, (error) => {
           console.log(error.text);
           alert("Algo salió mal, por favor contáctame al email gastonodetti@gmail.com")
