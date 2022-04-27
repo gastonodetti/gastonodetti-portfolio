@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 import "../css/Form.css"
 
 export default function Form(props) {
+  
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -19,11 +20,10 @@ export default function Form(props) {
 
     
   };
-
+  
   return (
     <div className="popup-box">
     <span className="close-icon" onClick={props.handleClose}>x</span>
-      
     <form ref={form} onSubmit={sendEmail} className="box">
       <h4>Por favor, completa el formulario y me pondré en contacto lo antes posible</h4>
       <input type="text" name="name" placeholder='Tu nombre'/>

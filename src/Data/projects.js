@@ -17,12 +17,12 @@ export default[
             iconUrl: "#",
             link: "https://todo-murex-omega.vercel.app/"
         },
-        /*{
+        {
             name: "Tenzies game - React",
             tools: "React Js",
             iconUrl: "#",
             link: "https://tenzies-8r31zrasy-gastonodetti.vercel.app/",
-        },*/
+        },
         {
             name: "Meme generator - React",
             tools: "React Js",
