@@ -15,7 +15,7 @@ export default function Footer() {
            <div className="footer--contactMe">
                 <h2>¿Trabajemos juntos?</h2>
                 <p>Pongámonos en contacto y charlemos un poco.</p>
-                <button className="footer--button" onClick={togglePopup} href="#">¡Clickéame!</button>
+                <button className="footer--button" onClick={togglePopup} href="#">Click aquí</button>
                 {isOpen && <Form  handleClose={togglePopup} />}                
            </div>
            <div className="footer--social">

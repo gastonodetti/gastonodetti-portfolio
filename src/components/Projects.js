@@ -8,15 +8,17 @@ import projectsData from "../Data/projects"
 
 export default function Projects() {
 
-    const toolsElements = toolsData.map(e => {
+    const toolsElements = toolsData.map(tool => {
         return <Tool 
-                    {...e}
+                    key={tool.name}
+                    {...tool}
                 />
     })
 
-    const projectElements = projectsData.map(e => {
+    const projectElements = projectsData.map(project => {
         return <Project 
-                    {...e}
+                    key={project.name}
+                    {...project}
                 />
     })
 
@@ -25,7 +27,7 @@ export default function Projects() {
     return (
         <div className="projects--div">
             <div>
-                <h3>Herramientas que sé usar</h3>
+                <h3>Mis herramientas</h3>
                 <div className="tools--container">
                    {toolsElements}
                 </div>
