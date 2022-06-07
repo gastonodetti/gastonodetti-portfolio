@@ -21,7 +21,7 @@ export default[
             name: "Tenzies game - React",
             tools: "React Js",
             iconUrl: "#",
-            link: "https://tenzies-8r31zrasy-gastonodetti.vercel.app/",
+            link: "https://tenzies-gastonodetti.vercel.app/",
         },
         {
             name: "Meme generator - React",
